@@ -1,4 +1,4 @@
-const { ethers, upgrades, run } = require('hardhat');
+8const { ethers, upgrades, run } = require('hardhat');
 
 async function main() {
     const [deployer] = await ethers.getSigners();
