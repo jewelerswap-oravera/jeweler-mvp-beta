@@ -1,15 +1,29 @@
 {
   "name": "jeweler-mvp-beta",
   "version": "1.0.0",
-  "description": "JewelerSwap Beta MVP",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "npx hardhat test",
-    "deploy": "npx hardhat run scripts/deploy.js --network mumbai"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios"
+  },
+  "dependencies": {
+    "expo": "~49.0.0",
+    "react": "18.2.0",
+    "react-native": "0.72.0",
+    "ethers": "^6.7.1",
+    "react-i18next": "^13.5.0",
+    "i18next": "^23.7.6",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/stack": "^6.3.20",
+    "@react-native-async-storage/async-storage": "^1.19.3",
+    "expo-camera": "~14.0.0",
+    "expo-haptics": "~13.0.0",
+    "@walletconnect/react-native-dapp": "^2.10.0",
+    "firebase": "^10.5.0"
   },
   "devDependencies": {
-    "hardhat": "^2.19.0",
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
-    "@openzeppelin/contracts": "^5.0.0"
-  }
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
 }
