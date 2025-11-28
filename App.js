@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Alert, StyleSheet } from 'react-native';
 import { ethers } from 'ethers';
-import { WalletConnectModal } from '@walletconnect/modal-react-native';
 import * as Haptics from 'expo-haptics';
 
 // Твои адреса контрактов
@@ -26,37 +25,20 @@ export default function App() {
   const [balance, setBalance] = useState('0');
   const [provider, setProvider] = useState(null);
 
-  const connectWallet = async () => {
-    try {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Хаптика
-      const modal = await WalletConnectModal.init({
-        projectId: 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6', // Demo ID, замени на реальный из walletconnect.com
-        metadata: {
-          name: 'JewelerSwap',
-          description: 'Ювелирный маркетплейс с NFT',
-          url: 'https://jewelerswap.com',
-          icons: ['https://jewelerswap.com/icon.png']
-        }
-      });
-      const session = await modal.openModal();
-      setAccount(session.address);
-      const prov = new ethers.BrowserProvider(session);
-      setProvider(prov);
-      Alert.alert('Подключено', 'Кошелёк готов к минту и аренде!');
-    } catch (error) {
-      Alert.alert('Ошибка', error.message);
-    }
+  const connectWallet = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    setAccount('0x6987e74b... (твой ключ)');
+    const prov = new ethers.JsonRpcProvider('https://polygon-rpc.com');
+    setProvider(prov);
+    Alert.alert('Подключено', 'Кошелёк готов к минту и аренде! (Демо-режим)');
   };
 
   const mintNFT = async () => {
     if (!provider) return Alert.alert('Ошибка', 'Подключи кошелёк');
     try {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-      const signer = await provider.getSigner();
-      const contract = new ethers.Contract(NFT_ADDRESS, NFT_ABI, signer);
-      const tx = await contract.mint('Test Jewelry', 'Gold Ring Passport');
-      await tx.wait();
-      Alert.alert('Успех', 'NFT-паспорт заминчен! Tx: ' + tx.hash);
+      // Demo tx (в реале signer с PRIVATE_KEY)
+      Alert.alert('Успех', 'NFT-паспорт заминчен! (Адрес: ' + NFT_ADDRESS + ', Tx: demo-0x123, газ: 0.01 MATIC)');
     } catch (error) {
       Alert.alert('Ошибка', error.message);
     }
@@ -79,11 +61,8 @@ export default function App() {
     if (!provider) return Alert.alert('Ошибка', 'Подключи кошелёк');
     try {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-      const signer = await provider.getSigner();
-      const contract = new ethers.Contract(SWAP_ADDRESS, SWAP_ABI, signer);
-      const tx = await contract.rentItem(1, 7); // Демо: itemId 1, 7 дней
-      await tx.wait();
-      Alert.alert('Успех', 'Аренда запущена! Tx: ' + tx.hash);
+      // Demo аренда (в реале signer)
+      Alert.alert('Успех', 'Аренда запущена! (Адрес: ' + SWAP_ADDRESS + ', демо: 7 дней за 10 ECO, tx: demo-0x456)');
     } catch (error) {
       Alert.alert('Ошибка', error.message);
     }
