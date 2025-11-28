@@ -1,3 +1,4 @@
+
 {
   "expo": {
     "name": "JewelerSwap",
@@ -11,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.jewelerswap.mvp.beta"
@@ -27,9 +30,11 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "eas": {
-        "projectId": "a1b2c3d4-e5f6-7890-g1h2-i3j4k5l6m7n8"
-      }
+      "PRIVATE_KEY": "6987e74b4d19eedf75d37fb2f3d366640fda5c3f55bc24400c74848014717701",
+      "POLYGON_RPC_URL": "https://polygon-rpc.com",
+      "NFT_ADDRESS": "0xF7b8D4e4a9cC2B8F8eE3B8dC5B8a9fF2c7E8b9D2",
+      "ECO_ADDRESS": "0x9A1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t",
+      "SWAP_ADDRESS": "0xE3f8a7b6c5d4e3f2g1h0i9j8k7l6m5n4o3p2q1r0s"
     }
   }
 }
