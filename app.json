@@ -39,8 +39,13 @@
       "NFT_CONTRACT": "0x...адрес_NFT_паспортов",
       "JEWELRY_SWAP_CONTRACT": "0x...адрес_основного_контракта",
       "eas": {
-        "projectId": "автоматически_подтянется_не_трогай"
+        "projectId": "f065fd55-d559-4c58-9888-a2ccc02823f0"
       }
     }
-  }
+  },
+  "sdkVersion": "49.0.0",
+  "platforms": [
+    "ios",
+    "android"
+  ]
 }
