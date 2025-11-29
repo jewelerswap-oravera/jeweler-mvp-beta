@@ -8,11 +8,7 @@
       "developmentClient": true,
       "distribution": "internal",
       "android": {
-        "gradleCommand": ":app:assembleDebug",
         "buildType": "apk"
-      },
-      "ios": {
-        "buildType": "simulator"
       }
     },
     "preview": {
@@ -22,12 +18,13 @@
       }
     },
     "production": {
+      "distribution": "store",
       "android": {
         "buildType": "app-bundle"
-      },
-      "ios": {
-        "buildType": "archive"
       }
     }
+  },
+  "submit": {
+    "production": {}
   }
 }
