@@ -1,26 +1,33 @@
 {
   "cli": {
-    "version": ">= 5.0.0"
+    "version": ">= 5.0.0",
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
       "developmentClient": true,
       "distribution": "internal",
       "android": {
-        "gradleCommand": ":app:installDebug"
+        "gradleCommand": ":app:assembleDebug",
+        "buildType": "apk"
+      },
+      "ios": {
+        "buildType": "simulator"
       }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
     },
     "production": {
-      "distribution": "store",
       "android": {
-        "credentialsSource": "local"  // или "remote", если настроишь в EAS
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "buildType": "archive"
       }
     }
-  },
-  "submit": {
-    "production": {}
   }
 }
