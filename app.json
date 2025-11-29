@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "JewelerSwap",
-    "slug": "jeweler-swap",
+    "slug": "jeweler-swap-",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,10 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,21 +22,25 @@
       "bundleIdentifier": "com.jewelerswap.mvp.beta"
     },
     "android": {
+      "package": "com.jewelerswap.mvp.beta",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.jewelerswap.mvp.beta"
+        "backgroundColor": "#000000"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "PRIVATE_KEY": "6987e74b4d19eedf75d37fb2f3d366640fda5c3f55bc24400c74848014717701",
-      "POLYGON_RPC_URL": "https://polygon-rpc.com",
-      "NFT_ADDRESS": "0xF7b8D4e4a9cC2B8F8eE3B8dC5B8a9fF2c7E8b9D2",
-      "ECO_ADDRESS": "0x9A1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t",
-      "SWAP_ADDRESS": "0xE3f8a7b6c5d4e3f2g1h0i9j8k7l6m5n4o3p2q1r0s"
+      "PRIVATE_KEY": "твой_приватный_ключ_без_0x_или_с_0x_как_есть",
+      "RPC_URL": "https://polygon-rpc.com",
+      "ECO_CONTRACT": "0x...адрес_ECO_токена",
+      "NFT_CONTRACT": "0x...адрес_NFT_паспортов",
+      "JEWELRY_SWAP_CONTRACT": "0x...адрес_основного_контракта",
+      "eas": {
+        "projectId": "автоматически_подтянется_не_трогай"
+      }
     }
   }
 }
