@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "JewelerSwap",
+    "name": "JewelerSwap Demo",
     "slug": "jeweler-swap-",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,16 +11,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.jewelerswap.mvp.beta"
-    },
+    "platforms": ["android"],
     "android": {
       "package": "com.jewelerswap.mvp.beta",
       "versionCode": 1,
@@ -28,9 +22,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "PRIVATE_KEY": "твой_приватный_ключ_без_0x_или_с_0x_как_есть",
@@ -43,9 +34,5 @@
       }
     }
   },
-  "sdkVersion": "49.0.0",
-  "platforms": [
-    "ios",
-    "android"
-  ]
+  "sdkVersion": "49.0.0"
 }
