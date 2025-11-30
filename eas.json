@@ -1,7 +1,6 @@
 {
   "cli": {
-    "version": ">= 5.0.0",
-    "appVersionSource": "remote"
+    "version": ">= 16.6.2"
   },
   "build": {
     "development": {
@@ -12,10 +11,8 @@
       }
     },
     "production": {
-      "distribution": "store",
       "android": {
-        "buildType": "app-bundle",
-        "credentialsSource": "remote"
+        "buildType": "apk"
       }
     }
   },
