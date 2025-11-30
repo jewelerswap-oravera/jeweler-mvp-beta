@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, Alert, StyleSheet } from 'react-native';
 import { ethers } from 'ethers';
-import { WalletConnectModal } from '@walletconnect/modal-react-native';
+import { WalletConnectProvider } from '@walletconnect/universal-provider';
 import * as Haptics from 'expo-haptics';
 
 // Твои адреса контрактов
@@ -29,7 +29,7 @@ export default function App() {
   const connectWallet = async () => {
     try {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Хаптика
-      const modal = await WalletConnectModal.init({
+      const walletConnectProvider = await WalletConnectProvider.init({
         projectId: 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6', // Demo ID, замени на реальный из walletconnect.com
         metadata: {
           name: 'JewelerSwap',
@@ -38,9 +38,10 @@ export default function App() {
           icons: ['https://jewelerswap.com/icon.png']
         }
       });
-      const session = await modal.openModal();
-      setAccount(session.address);
-      const prov = new ethers.BrowserProvider(session);
+      await walletConnectProvider.enable();
+      const session = walletConnectProvider.session;
+      setAccount(session.namespaces.eip155.chains[0].accounts[0].split(':')[2]);
+      const prov = new ethers.BrowserProvider(walletConnectProvider);
       setProvider(prov);
       Alert.alert('Подключено', 'Кошелёк готов к минту и аренде!');
     } catch (error) {
