@@ -1,38 +1,49 @@
 {
-  "expo": {
-    "name": "JewelerSwap Demo",
-    "slug": "jeweler-swap-",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+  "name": "JewelerSwap",
+  "slug": "jeweler-swap-",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "icon": "./assets/icon.png",
+  "userInterfaceStyle": "light",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#000000"
+  },
+  "updates": {
+    "fallbackToCacheTimeout": 0
+  },
+  "assetBundlePatterns": [
+    "**/*"
+  ],
+  "ios": {
+    "supportsTablet": true,
+    "bundleIdentifier": "com.jewelerswap.mvp.beta"
+  },
+  "android": {
+    "package": "com.jewelerswap.mvp.beta",
+    "versionCode": 1,
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
       "backgroundColor": "#000000"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "platforms": ["android"],
-    "android": {
-      "package": "com.jewelerswap.mvp.beta",
-      "versionCode": 1,
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#000000"
-      }
-    },
-    "extra": {
-      "PRIVATE_KEY": "твой_приватный_ключ_без_0x_или_с_0x_как_есть",
-      "RPC_URL": "https://polygon-rpc.com",
-      "ECO_CONTRACT": "0x...адрес_ECO_токена",
-      "NFT_CONTRACT": "0x...адрес_NFT_паспортов",
-      "JEWELRY_SWAP_CONTRACT": "0x...адрес_основного_контракта",
-      "eas": {
-        "projectId": "f065fd55-d559-4c58-9888-a2ccc02823f0"
-      }
     }
   },
-  "sdkVersion": "49.0.0"
+  "web": {
+    "favicon": "./assets/favicon.png"
+  },
+  "extra": {
+    "PRIVATE_KEY": "твой_приватный_ключ_без_0x_или_с_0x_как_есть",
+    "RPC_URL": "https://polygon-rpc.com",
+    "ECO_CONTRACT": "0x...адрес_ECO_токена",
+    "NFT_CONTRACT": "0x...адрес_NFT_паспортов",
+    "JEWELRY_SWAP_CONTRACT": "0x...адрес_основного_контракта",
+    "eas": {
+      "projectId": "f065fd55-d559-4c58-9888-a2ccc02823f0"
+    }
+  },
+  "sdkVersion": "49.0.0",
+  "platforms": [
+    "ios",
+    "android"
+  ]
 }
